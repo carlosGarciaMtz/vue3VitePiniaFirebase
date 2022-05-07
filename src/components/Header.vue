@@ -5,17 +5,13 @@
     <router-link to="/">HOME</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/register">Register</router-link> |
-    <button @click="logOut">Logout</button>
+    <button @click="userStore.logout" :disabled="userStore.loader">Logout</button>
     </div>
   </div>
 </template>
 
 <script setup>
-const logOut = ()=>{
-  console.log('cerrar');
-}
+  import { useUserStore } from '../stores/users.js';
+  const userStore = useUserStore();
+
 </script>
-
-<style lang="scss" scoped>
-
-</style>
