@@ -4,18 +4,20 @@
     <p>
       {{userStore.userData?.email}}
     </p>
+    <FormCU tituloBoton="Agregar"/>
     <p v-if="databaseStore.loadingDoc">Loading Docs...</p>
-    <ul v-else>
-      <li v-for="document of databaseStore.documents" :key="document.id">
-        {{document.id}} - {{document.name}} - {{document.short}}
-      </li>
-    </ul>
+    <div v-else>
+      <UrlList :docs="databaseStore.documents"/>
+    </div>
   </div>
 </template>
 
 <script setup>
   import { useUserStore } from '../stores/users.js';
   import { useDatabaseStore } from '../stores/database.js';
+  import UrlList from '../components/UrlList.vue';
+  import FormCU from '../components/FormCU.vue';
+
 
   const userStore = useUserStore();
   const databaseStore = useDatabaseStore();
