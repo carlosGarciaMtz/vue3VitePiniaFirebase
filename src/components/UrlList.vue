@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-import {defineProps} from 'vue';
 import { useDatabaseStore } from '../stores/database.js';
 import { useRouter } from 'vue-router';
 
