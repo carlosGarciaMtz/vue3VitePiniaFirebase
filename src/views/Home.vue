@@ -1,5 +1,5 @@
 <template>
-	<Header />
+	<Header path="home"/>
   <div class="main">
     <Titulo />
     <Products />
@@ -184,7 +184,7 @@
 import { useUserStore } from '../stores/users.js';
 import Titulo from '../components/Home/Titulo.vue';
 import Products from '../components/Home/Products.vue';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 
@@ -192,6 +192,10 @@ const userStore = useUserStore();
 
 const cities = ref(['AGUASCALIENTES','CANCÚN','CELAYA','CAMPECHE','CD. DEL CARMEN','CD. OBREGÓN','CHETUMAL','CHIHUAHUA','CIUDAD DE MÉXICO','CIUDAD JUÁREZ','COATEPEC DE LAS HARINAS','COATZACOALCOS','COLIMA','CÓRDOBA','COSALA','CUERNAVACA','CULIACÁN','DURANGO','ENSENADA','ESTADO DE MÉXICO','GUADALAJARA','GUAYMAS','HERMOSILLO','ISLAS MUJERES','LEÓN','LOS MOCHIS','MAZATLÁN','MÉRIDA','MEXICALI','MINATITLÁN','MINERAL DEL MONTE','MORELIA','MONTERREY','PACHUCA','PLAYA DEL CARMEN','PUEBLA','QUERÉTARO','SALTILLO','SAN CRISTÓBAL DE LAS CASAS','SAN LUIS POTOSÍ','SAN MIGUEL DE ALLENDE','TAMPICO','TEPIC','TEPOZTLÁN','TIJUANA','TORREÓN','TUXTLA GUTIÉRREZ','VERACRUZ','VILLAHERMOSA','XALAPA','ZACANGO']);
 
+onMounted(() => {
+	document.querySelector('body').removeAttribute('class');
+	document.querySelector('body').classList.add('landing');
+})
 </script>
 
 <style scoped>

@@ -1,11 +1,25 @@
 <template>
-{{path}}
   <header>
     <div class="pure-g">
       <div class="pure-u-1 pure-u-sm-1-3 pure-u-lg-7-24">
-        <div class="logo">
+        <div class="logo" v-if="path=='home'" >
           <router-link to="/">
             <img src="../assets/img/logos/izzi-flex-logo.svg" alt="izzi flex">
+          </router-link>
+        </div>
+        <div class="logo flex-logo" v-if="path=='fq'">
+          <router-link to="/">
+            <img src="../assets/img/logos/flex-text-logo.png" alt="izzi flex">
+          </router-link>
+        </div>
+        <div class="logo pocket-logo" v-if="path=='detail'">
+          <router-link to="/">
+            <img src="../assets/img/logos/pocket-text-logo.png" alt="izzi flex">
+          </router-link>
+        </div>
+        <div class="logo flex-logo" v-if="path=='detail-flex'">
+          <router-link to="/">
+            <img src="../assets/img/logos/flex-text-logo.png" alt="izzi flex">
           </router-link>
         </div>
       </div>
@@ -15,18 +29,12 @@
 </template>
 
 <script setup>
-import { watch, watchEffect } from 'vue';
-import MenuSession from './Header/MenuSession.vue';
+  import MenuSession from './Header/MenuSession.vue';
 
-watchEffect(()=>{
-  if (document.title.includes('detalle')){
-    console.log('hola')
-  }else{
-    console.log('adios')
-  }
-});
+  const props = defineProps({
+    path : String
+  });
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
 </style>

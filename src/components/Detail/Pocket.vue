@@ -134,7 +134,6 @@
 
 	onMounted(async()=>{
 		await productStore.getProducts('POCKET');
-		document.title='izzi flex - Detalle Pocket'
 		console.log(productStore.pocket);
 		console.log(productStore.flex);
 	});
