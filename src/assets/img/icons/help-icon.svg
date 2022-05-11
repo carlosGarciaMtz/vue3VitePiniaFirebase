@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>help-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="help-icon" fill="#979797" fill-rule="nonzero">
+            <path d="M9,0.667 C4.39849717,0.668655713 0.668655713,4.39849717 0.667,9 C0.667,13.6 4.4,17.333 9,17.333 C13.6,17.333 17.333,13.6 17.333,9 C17.333,4.4 13.6,0.667 9,0.667 Z M9.833,14.833 L8.167,14.833 L8.167,13.167 L9.833,13.167 L9.833,14.833 Z M11.558,8.375 L10.808,9.142 C10.208,9.75 9.833,10.25 9.833,11.5 L8.167,11.5 L8.167,11.083 C8.167,10.167 8.542,9.333 9.142,8.725 L10.175,7.675 C10.483,7.375 10.667,6.958 10.667,6.5 C10.667,5.583 9.917,4.833 9,4.833 C8.083,4.833 7.333,5.583 7.333,6.5 L5.667,6.5 C5.667,4.65923493 7.15923493,3.167 9,3.167 C10.8407651,3.167 12.333,4.65923493 12.333,6.5 C12.333,7.233 12.033,7.9 11.558,8.375 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

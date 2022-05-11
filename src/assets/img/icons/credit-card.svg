@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="25px" viewBox="0 0 35 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>51815371-065F-4228-8801-2FBDC29D2A8F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="v12-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="06-Pago" transform="translate(-342.000000, -470.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="1014"></rect>
+            <g id="Group-7" transform="translate(342.000000, 470.000000)">
+                <rect id="mastercard-bg" fill="#979797" x="0" y="0" width="35" height="25" rx="3.31578947"></rect>
+                <rect id="mastercard-bg" fill="#E6E6E6" x="4" y="5" width="8" height="6" rx="1"></rect>
+                <rect id="mastercard-bg" fill="#E6E6E6" x="4" y="16" width="3" height="2"></rect>
+                <rect id="mastercard-bg" fill="#E6E6E6" x="9" y="16" width="3" height="2"></rect>
+                <rect id="mastercard-bg" fill="#E6E6E6" x="14" y="16" width="3" height="2"></rect>
+                <rect id="mastercard-bg" fill="#E6E6E6" x="19" y="16" width="3" height="2"></rect>
+                <rect id="mastercard-bg" fill="#E6E6E6" x="24" y="16" width="3" height="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
