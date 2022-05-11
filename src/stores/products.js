@@ -6,7 +6,9 @@ export const useProductStore = defineStore('productStore',{
     loader: false,
     pocket:[],
     flex: [],
+    typeProduct:"",
   }),
+  persist: true,
   getters: {
     
   },
@@ -22,6 +24,7 @@ export const useProductStore = defineStore('productStore',{
         };
         const resp = await fetch(URL, requestOptions).then(response => response.json());
         productType== 'POCKET'? this.pocket=resp.response : this.flex=resp.response;
+        this.typeProduct = productType
       } catch (error) {
         console.table(error);
       }finally{

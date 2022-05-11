@@ -30,7 +30,6 @@
 
 <script setup>
   import MenuSession from './Header/MenuSession.vue';
-
   const props = defineProps({
     path : String
   });
