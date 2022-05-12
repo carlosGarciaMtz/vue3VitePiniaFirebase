@@ -149,7 +149,16 @@ export const useUserStore = defineStore('userStore',{
       }
     }
   ),
-  persist: true,
+  persist: {
+    key: 'userStore',
+    storage: sessionStorage,
+    beforeRestore: context => {
+      console.log('beforeRestore');
+    },
+    afterRestore: context => {
+      console.log('afterRestore');
+    }
+  },
   getters: {
   },
   actions:{

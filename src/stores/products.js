@@ -8,9 +8,7 @@ export const useProductStore = defineStore('productStore',{
     flex: [],
     typeProduct:"",
   }),
-  persist: true,
   getters: {
-    
   },
   actions:{
     async getProducts(productType){

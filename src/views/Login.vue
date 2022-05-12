@@ -1,7 +1,7 @@
 <template>
   <div id="login_form" class="main">
     <div class="pure-g">
-      <div v-if="userStore.user.bearerToken !==''" class="pure-u-1 pure-u-md-5-6 pure-u-md-offset-1-12 pure-u-lg-2-3 pure-u-lg-offset-1-6">
+      <div v-if="userStore.user.bearerToken ===''" class="pure-u-1 pure-u-md-5-6 pure-u-md-offset-1-12 pure-u-lg-2-3 pure-u-lg-offset-1-6">
         <div class="logo-holder text-logo m-b-40">
           <h1>
             <router-link to="/">
@@ -10,14 +10,14 @@
             </router-link>
           </h1>
         </div>
-        <div v-if="cambioUsuarioExito" class="alert-wrapper pure-g">
+        <!-- <div v-if="cambioUsuarioExito" class="alert-wrapper pure-g">
             <div class="pure-u-1 pure-u-md-3-4 pure-u-md-offset-1-8 pure-u-lg-7-12 pure-u-lg-offset-5-24">
                 <div class="alert mid m-b-10">
                     <p class="fw-semibold m-b-5">Estamos a un paso de cambiar tu correo.</p>
                     <p class="small">Ingresa a tu bandeja de correo y haz click en el enlace que te enviamos para confirmarlo.</p>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="modal-form-wrapper m-b-20">
           <div class="contents">
             <div class="h6 fw-semibold spacing-m1 text-center m-b-20">Bienvenido a izzi flex.<br> Ingresa tu correo y contraseña </div>
@@ -71,7 +71,7 @@
 </template>
 
 <script setup>
-import { onUnmounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useProductStore } from '../stores/products.js';
 import { useUserStore } from '../stores/users.js';
 import Footer from '../components/Footer.vue';
@@ -81,14 +81,18 @@ const userStore = useUserStore();
 const productStore = useProductStore();
 const router = useRouter()
 
-const cambioUsuarioExito = ref(false)
 const typeProduct = ref('');
 const user = ref('')
 const pass = ref('')
 
-onUnmounted(()=>{
+onMounted(()=>{
   typeProduct.value = productStore.typeProduct;
+  user.value = "";
+  pass.value = "";
+  console.log(user.value)
+  console.log(pass.value)
 });
+
 const login = async ()=>{
   try {
     await userStore.login({username: user.value, password: pass.value, sessionType: "WEB_SESSION"})

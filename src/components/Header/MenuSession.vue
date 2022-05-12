@@ -14,10 +14,10 @@
           <span>INICIAR SESIÓN</span>
       </router-link>
     </div>  
-    <div v-else class="pure-u-1 pure-u-sm-1-2 text-right">
+    <div v-if="userStore.user.bearerToken !== ''" class="pure-u-1 pure-u-sm-1-2 text-right">
       <div id="sessionAccion">
-          <div class="user-block">
-            <a href="#" class="user-toggle" onclick="$(this).parent().toggleClass('active');">
+          <div class="user-block" :class="toggle?'active':''">
+            <a href="#" class="user-toggle" @click.prevent="toggleClass">
                 <span class="thumb"></span>
                 <span class="username">{{userStore.profile.name}}</span>
                 <svg class="icon">
@@ -27,8 +27,8 @@
             <div class="user-options">
                 <p class="user-email small m-b-10">{{userStore.profile.email}}</p>
                 <ul v-if="userStore.profile.hasProducts" class="m-b-20" id="sessionValuehasPedidos">
-                  <li><a href="micuenta-miflex.html">Mi Cuenta</a></li>
-                  <li><a href="micuenta-pedido.html">Mis Pedidos</a></li>
+                  <li><router-link to="/micuenta-miflex">Mi Cuenta</router-link></li>
+                  <li><router-link to="/micuenta-pedido">Mis Pedidos</router-link></li>
                 </ul>
                 <a href="#" class="pure-button white small" @click.prevent="session">Cerrar sesión</a>
             </div>
@@ -48,11 +48,18 @@
 
 <script setup>
   import { useUserStore } from '../../stores/users';
+  import { ref } from 'vue';
+  
+  const toggle = ref(false);
   
   const userStore = useUserStore();
 
   const session = ()=>{
     userStore.logout();
+  }
+
+  const toggleClass = () => {
+    toggle.value? toggle.value=false:toggle.value=true;
   }
 </script>
 
