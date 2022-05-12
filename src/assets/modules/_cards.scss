@@ -1,0 +1,39 @@
+.cards-grid{
+	display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; max-width: 360px;
+}
+
+.card{
+	border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px; margin-bottom: 24px; padding: 24px; position: relative; width: 156px;
+
+	p{font-weight: 600; margin: 0;}
+
+	svg{margin-bottom: 10px; width: 20px; height: 20px;}
+
+	&.card--primary{
+		background-color: $primary-color;
+
+		*{color: white;}
+	}
+
+	&.card--orange{
+		background-color: $orange-color;
+
+		*{color: white;}
+	}
+
+	&.card--green{
+		background-color: $green-color;
+
+		*{color: white;}
+	}
+
+	&.card--default{
+		background-color: white;
+
+		*{color: black;}
+	}
+
+	&.card--featured{
+		background: linear-gradient(180deg, #FFC4A5 0%, rgba(255, 255, 255, 0) 100%), #FFF0C1; border-color: transparent; text-align: center; width: 100%;
+	}
+}

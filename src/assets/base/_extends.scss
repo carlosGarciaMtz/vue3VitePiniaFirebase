@@ -1,0 +1,8 @@
+%clean-list{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+%clearfix{
+	content: "."; display: block; height: 0; clear: both; visibility: hidden;overflow:hidden;
+}

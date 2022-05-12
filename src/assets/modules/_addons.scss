@@ -1,0 +1,140 @@
+.addons-grid{
+	display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; margin-bottom: 24px;
+
+	.addon{
+		margin-bottom: 8px; overflow: hidden; position: relative; width: 48%;
+
+		@media only screen and (max-width:1024px){
+			width: 100%;
+		}
+
+		input{
+			opacity: 0; position: absolute;
+
+			&:focus + label{
+				border-color: $yellow-color;
+			}
+		}
+
+		label{
+			border: solid 3px transparent; border-radius: 8px; height: 56px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; transition: all 0.2s linear; overflow: hidden;
+
+			@media only screen and (max-width:1024px){
+				padding: 8px 16px;
+			}
+
+			> *{position: relative; z-index: 1;}
+
+			p{color: white; margin: 0;}
+
+			.addon-check__indicator{
+				display: inline-flex; align-items: flex-start; justify-content: flex-end; width: 28px; height: 28px; opacity: 0; pointer-events: none; position: absolute; top: 0; right: 0; padding: 7px 5px 0 0; transition: all 0.2s linear;
+
+				&:before{
+					content: ""; position: absolute; top: 3px; right: 3px; width: 0; height: 0; border-style: solid; border-width: 0 28px 28px 0; border-color: transparent $yellow-color transparent transparent;
+				}
+
+				img{filter: invert(1); width: 10px;}
+			}
+
+			.addon-name{
+				flex-shrink: 0;
+
+				p{font-size: 15px; font-weight: 600; margin: 0;}
+			}
+			.addon-description{
+				flex-shrink: 1; flex-grow: 1; padding: 0 15px; text-align: right;
+
+				p{font-size: 10px;}
+			}
+			.addon-pricing{
+				flex-shrink: 0; text-align: right;
+
+				p.small-text{font-size: 10px;}
+			}
+		}
+
+		&:not(.internacional-addon, .premium-addon, .netflix-estandar-addon, .netflix-premium-addon, .izzitvhdplus-addon, .stingraykaraoke-addon, .noggin-addon){
+			label {
+				&:after{content: ""; position: absolute; top: 0; left: -60px; width: 235px; height: 67px; z-index: 0; pointer-events: none; border-bottom-left-radius: 100%; background-image: url(../img/content/addon-decoration.svg); background-size: 235px 67px; background-repeat: no-repeat;}
+			}
+		}
+
+		input:checked + label{
+			border-color: $yellow-color;
+
+			.addon-check__indicator{opacity: 1;}
+		}
+
+		&.blim-addon{
+			label{background-color: #191919;}
+		}
+
+		&.starpremium-addon{
+			label{background-color: #241C32;}
+		}
+
+		&.hbomax-addon{
+			label{background-color: #211B40;}
+		}
+
+		&.golden-addon{
+			label{
+				background-color: #3A134F;
+
+				.addon-name{
+					img{width: 63px;}
+				}
+			}
+		}
+
+		&.disneyplus-addon{
+			label{background: radial-gradient(143.23% 143.23% at 51.53% 86.32%, #10489C 0%, #06092C 100%);}
+		}
+
+		&.internacional-addon, &.premium-addon, &.netflix-estandar-addon, &.netflix-premium-addon, &.izzitvhdplus-addon{
+			label{background-color: #F5F6F8;}
+
+			p{color: black;}
+		}
+
+		&.netflix-estandar-addon, &.netflix-premium-addon{
+			.addon-description{text-align: left;}
+			.addon-pricing{
+				p{color: #E01F1D;}
+			}
+		}
+
+		&.acorntv-addon{
+			label{background-color: #19203B;}
+		}
+
+		&.stingraykaraoke-addon{
+			label{background-color: #FEFEFE;}
+
+			p{color: black;}
+		}
+
+		&.qello-addon{
+			label{background-color: #060606;}
+		}
+
+		&.noggin-addon{
+			label{background-color: #FEFEFE;}
+
+			p{color: black;}
+		}
+
+		&.starzplay-addon{
+			label{background-color: #060606;}
+		}
+
+		&.dogtv-addon{
+			label{background-color: #DC7733;}
+		}
+
+		&.paramount-addon{
+			label{background-color: #0064FF;}
+		}
+	}
+}

@@ -2,7 +2,11 @@ import {defineStore} from 'pinia';
 
 export const useUserStore = defineStore('userStore',{
   state: () => ({
-    userData: 'datos de usuario'
+    name: "",
+    entryChannel: "",
+    token: "",
+    idVendor: "",
+    rpt:"",
   }),
   getters: {
     minuscula(state){
@@ -10,8 +14,17 @@ export const useUserStore = defineStore('userStore',{
     }
   },
   actions:{
-    setUserData(payload){
-      this.userData = payload;
+    currentUser(){
+      return (this.name !== "" && this.entryChannel !== "" && this.token !== "" && this.idVendor !== "" && this.rpt !== "") ? true : false;
+    },
+    async getCities(){
+      try {
+        
+      } catch (error) {
+        
+      }finally{
+
+      }
     }
   }
 })

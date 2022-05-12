@@ -1,0 +1,155 @@
+.panel{
+	background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.05); box-shadow: 0px 8px 16px rgba(84, 95, 122, 0.1); border-radius: 16px; padding: 56px; position: relative;
+
+	@media only screen and (min-width:768px) and (max-width:1024px){
+		padding: 32px 24px;
+	}
+	@media only screen and (max-width:767px){
+		padding: 24px 16px;
+	}
+
+	&.panel--centered{margin-left: auto; margin-right: auto;}
+
+	&.panel--small{max-width: 424px;}
+
+	&.panel--outline{background-color: transparent; border: solid 1px #bad3ce; box-shadow: none;}
+
+	&.panel--lightgray{background-color: #F5F6F8; border-color: transparent; box-shadow: none;}
+
+	&.panel--slim{padding: 16px;}
+
+	&.panel--no-mobile{
+		@media only screen and (max-width:767px){
+			background: none; border: none; box-shadow: none; padding: 0;
+		}
+	}
+
+	&.panel--clickable{
+		cursor: pointer; padding: 32px 60px;
+
+		.panel-clickable__indicator{
+			background: #f5f6f8;
+			background: -moz-linear-gradient(45deg,  #f5f6f8 50%, #d31772 50%);
+			background: -webkit-linear-gradient(45deg,  #f5f6f8 50%,#d31772 50%);
+			background: linear-gradient(45deg,  #f5f6f8 50%,#d31772 50%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f8', endColorstr='#d31772',GradientType=1 );
+			border-radius: 0 12px 0 0; display: none; align-items: flex-start; justify-content: flex-end; width: 28px; height: 28px; position: absolute; top: 0px; right: 0px; padding: 4px 3px 0 0;
+
+			img{width: 11px;}
+		}
+
+		@media only screen and (max-width:767px){
+			padding: 24px;
+		}
+
+		.panel__clickable-contents{
+			display: none; margin-top: 16px;
+		}
+
+		&.panel--expanded{
+			background: #F5F6F8;
+			border: 2px solid $primary-color;
+
+			.panel-clickable__indicator{display: inline-flex;}
+
+			.panel__clickable-contents{display: block;}
+		}
+	}
+}
+
+.alert{
+	background: #FFFCF0; border: 1px solid rgba(0, 0, 0, 0.05); border-radius: 8px; margin-top: 16px; margin-bottom: 24px; padding: 16px 32px;	
+
+	&.alert--centered{margin-left: auto; margin-right: auto;}
+
+	&.alert--success{
+		background: #d4edda;
+
+		p{color: #155724;}
+	}
+	&.alert--error{
+		background: #f8d7da;
+
+		p{color: #721c24;}
+	}
+
+	p{margin: 0;}
+}
+
+.accordion-holder{
+	background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.05); box-shadow: 0px 2px 5px rgba(84, 95, 122, 0.1); border-radius: 16px; margin-bottom: 24px; position: relative;
+
+	@media only screen and (max-width:767px){
+		border-radius: 0; margin-left: -24px; margin-right: -24px;
+	}
+
+	.accordion{
+
+		.accordion-title{
+			background: #FFF; border-bottom: solid 1px rgba(218, 221, 223, 0.5); border-radius: 16px; color: $base-color; display: flex; align-items: center; justify-content: space-between; font-weight: 600; padding: 0 60px; position: relative; height: 86px;
+
+			@media only screen and (min-width:768px) and (max-width:1024px){
+				padding: 0 40px
+			}
+			@media only screen and (max-width:767px){
+				border-radius: 0; padding: 0 32px;
+			}
+
+			&:hover{text-decoration: none;}
+
+			span{padding-right: 16px;}
+
+			svg{transform: rotate(-90deg);}
+		}
+
+		.accordion-content{
+			background: #F5F6F8; display: none; padding: 0 60px 32px; text-align: left;
+
+			@media only screen and (min-width:768px) and (max-width:1024px){
+				padding: 0 40px 24px;
+			}	
+			@media only screen and (max-width:767px){
+				padding: 0 32px 32px;
+			}
+
+			p{
+				word-break: break-word;
+			}
+		}
+
+		&.accordion--active{
+			.accordion-title{
+				background: #F5F6F8; border-bottom-color: transparent; border-radius: 16px 16px 0px 0px;
+
+				svg{transform: rotate(90deg);}
+			}
+
+			.accordion-content{display: block;}
+		}
+
+		&.accordion--persistent{
+			.accordion-title{
+				background: #F5F6F8; border-bottom-color: transparent; border-radius: 16px 16px 0px 0px;
+
+				svg{transform: rotate(90deg);}	
+			}
+
+			.accordion-content{display: block;}
+		}
+	}
+
+	.accordion-panel{
+		padding: 16px 60px;
+
+		@media only screen and (min-width:768px) and (max-width:1024px){
+			padding: 16px 40px
+		}
+		@media only screen and (max-width:767px){
+			padding: 16px 32px;
+		}
+	}
+}
+
+.inline-alert{
+	border-left: solid 4px $yellow-color; padding-left: 16px;
+}

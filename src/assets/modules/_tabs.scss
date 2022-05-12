@@ -1,0 +1,179 @@
+.featured-tabs{
+	max-width: 330px; position: relative;
+
+	.featured-tab-content{
+		display: none;
+
+		&.featured-tab-content--active{
+			display: block;
+		}
+	}
+
+	.featured-tab-controls{
+		display: flex; align-items: center; justify-content: center; flex-wrap: wrap; position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%);
+
+		a.featured-tab-control{
+			display: inline-flex; align-items: center; height: 20px; margin: 0 4px; opacity: 0.2;
+
+			&.featured-tab-control--active{opacity: 1;}
+
+			&:hover{text-decoration: none;}
+
+			span{background-color: $base-color; display: inline-block; height: 4px; width: 28px; pointer-events: none;}
+		}
+	}
+}
+
+.rounded-tabs{
+	position: relative;
+
+	.rounded-tab-content{
+		display: none;
+
+		&.rounded-tab-content--active{
+			display: block;
+		}
+	}
+
+	.rounded-tab-controls__holder{
+		height: 50px; margin-bottom: 45px; position: relative;
+
+		@media only screen and (max-width:767px){
+			max-width: 330px; margin-left: auto; margin-right: auto;
+		}
+
+		&.tabs--opened{
+			.rounded-tab-controls{
+				@media only screen and (max-width:767px){
+					display: block;
+				}
+			}
+		}
+	}
+
+	.rounded-tab-controls{
+		display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+
+		@media only screen and (max-width:767px){
+			background-color: white; display: none; position: absolute; top: 0; left: 0; width: 100%; border: solid 1px $primary-color; border-radius: 23px; z-index: 3;
+		}
+
+		a.rounded-tab-control.pure__button{
+			margin: 0 10px;
+
+			&:first-of-type{
+				margin-left: 0;
+
+				@media only screen and (max-width:767px){
+					border-radius: 23px 23px 0 0;
+				}
+			}
+			&:last-of-type{
+				margin-right: 0;
+
+				@media only screen and (max-width:767px){
+					border-radius: 0 0 23px 23px;
+				}
+			}
+
+			@media only screen and (min-width:768px) and (max-width:1024px){
+				font-size: 13px; letter-spacing: -0.2px; margin: 0 1px; padding: 0 9px;
+			}
+			@media only screen and (min-width:1025px) and (max-width:1156px){
+				padding: 0 16px;
+			}
+			@media only screen and (max-width:767px){
+				background-color: white; border-radius: 0; color: $base-color; display: block; width: 100%; margin: 0; text-align: left;
+			}
+
+			&.rounded-tab-control--active{
+				@media only screen and (max-width:767px){
+					color: $primary-color;
+				}
+			}
+		}
+	}
+
+	.rounded-tab-control-selected{
+		background-color: white; border: solid 1px $primary-color; border-radius: 23px; color: $primary-color; display: flex; align-items: center; text-align: center; height: 50px; padding: 0 24px; font-weight: 600;
+
+		@media only screen and (min-width:768px){
+			display: none;
+		}
+	}
+	.rounded-tab-control-selector{
+		position: absolute; top: 0; left: 0; width: 100%; height: 50px; display: flex; align-items: center; justify-content: flex-end; z-index: 2; padding: 0 24px; color: $primary-color;
+
+		svg{transform: rotate(-90deg);}
+
+		@media only screen and (min-width:768px){
+			display: none;
+		}
+	}
+}
+
+.addon-tabs{
+	position: relative;
+
+	.addon-tab-content{
+		display: none; border-top: solid 1px rgba(218, 221, 223, 0.5); padding-top: 24px;
+
+		&.addon-tab-content--active{
+			display: block;
+		}
+	}
+
+	.addon-tab-controls{
+		display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; margin-bottom: 24px;
+
+		a.addon-tab-control{
+			border-radius: 8px; color: $base-color; display: inline-flex; align-items: center; height: 55px; padding: 0 16px;
+
+			@media only screen and (max-width:1024px){
+				padding: 0 8px;
+			}
+
+			+ .addon-tab-control{margin-left: 24px;}
+
+			@media only screen and (max-width:1024px){
+				+ .addon-tab-control{margin-left: 4px;}
+			}
+
+			&:hover, &.addon-tab-control--active{background: rgba(211, 23, 114, 0.1); color: $primary-color;}
+
+			&:hover{text-decoration: none;}
+		}
+	}
+}
+
+.payment-tabs{
+	position: relative;
+
+	.payment-tab-content{
+		display: none; border-top: solid 1px rgba(218, 221, 223, 0.5); padding-top: 24px;
+
+		&.payment-tab-content--active{
+			display: block;
+		}
+	}
+
+	.payment-tab-controls__holder{text-align: center;}
+
+	.payment-tab-controls{
+		background: #FFFFFF; border: 1px solid $primary-color; border-radius: 100px; display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; padding: 3px; margin-bottom: 24px;
+
+		a.payment-tab-control{
+			background-color: #FFFFFF; border-radius: 100px; color: $primary-color; display: inline-flex; align-items: center; height: 52px; padding: 0 24px; transition: all 0.2s linear;
+
+			@media only screen and (max-width:767px){
+				padding: 0 16px;
+			}
+
+			&:hover, &.payment-tab-control--active{background: rgba(211, 23, 114, 0.1);}
+
+			&:hover{text-decoration: none;}
+
+			span{pointer-events: none;}
+		}
+	}
+}

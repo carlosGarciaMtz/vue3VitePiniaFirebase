@@ -1,0 +1,20 @@
+html, body{min-height: 100%; height: auto;}
+body{
+	background: linear-gradient(180deg, #FFFFFF 8.68%, #F5F6F8 68.7%); padding: 0; position: relative; min-height: 100vh;
+
+	@media only screen and (max-width:767px){
+		background: #FFFFFF;
+	}
+}
+
+main{
+	min-height: calc(100vh - 110px); padding: 24px 14px; position: relative;
+
+	&.login-page{
+		min-height: calc(100vh - 50px)
+	}
+
+	@media only screen and (max-width:767px){
+		min-height: calc(100vh - 126px);
+	}
+}

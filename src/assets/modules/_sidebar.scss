@@ -1,0 +1,18 @@
+.sidebar{
+	background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.05); box-shadow: 0px 8px 16px rgba(84, 95, 122, 0.1); border-radius: 16px; margin-bottom: 32px; padding: 40px;
+
+	@media only screen and (min-width:768px) and (max-width:1024px){
+		padding: 32px 16px;
+	}
+	@media only screen and (max-width:767px){
+		padding: 24px 16px;
+	}
+
+	p{margin: 0;}
+
+	.sidebar-actions{margin-top: 16px; padding-top: 16px; text-align: center;}
+
+	.pago-mensual-row{border-bottom: solid 1px rgba(218, 221, 223, 0.5); padding-bottom: 16px;}
+
+	.pago-mensual, .pago-30dias, .pago-unico{border-bottom: solid 1px rgba(218, 221, 223, 0.5); margin-bottom: 16px; padding-bottom: 16px;}
+}

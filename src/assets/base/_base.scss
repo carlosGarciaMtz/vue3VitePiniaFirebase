@@ -1,0 +1,49 @@
+*, *:before, *:after{box-sizing: border-box;}
+
+img{display: inline-block; vertical-align: middle; max-width: 100%; height: auto; object-fit: contain;}
+
+.logo{display: inline-block; width: 99px;}
+
+.pure__button{
+    border-radius: 100px; border: solid 1px transparent; padding: 0 24px; line-height: 48px; font-size: 15px; letter-spacing: 0px; font-weight: 600; transition: all 0.25s linear;
+
+    &:hover{text-decoration: none;}
+
+    &:active{box-shadow: none;}
+
+    &.pure__button--expand{width: 100%;}
+
+    &.pure__button--mobile-expand{
+        @media only screen and (max-width:767px) {
+            width: 100%; max-width: none;
+        }
+    }
+
+    &.pure__button--primary{
+        background: $primary-color; border-color: $primary-color; color: white;
+
+        &:hover, &:focus, &:active{background: white; color: $primary-color;}
+    }
+
+    &.pure__button--light-primary{
+        background: rgba(211, 23, 114, 0.1); border-color: rgba(211, 23, 114, 0.1); color: $primary-color;
+
+        &:hover, &:focus, &:active{background: $primary-color; color: white;}
+    }
+
+    &.pure__button--primary-outline{
+        background: transparent; border-color: $primary-color; color: $primary-color;
+
+        &:hover, &:focus, &:active, &.rounded-tab-control--active{background: $primary-color; border-color: $primary-color; color: white;}
+    }
+}
+
+.icon{
+    display: inline-block;width: 1rem;height: 1rem;stroke-width: 0;stroke: currentColor;fill: currentColor;
+
+    &.icon--h-inverted{transform: scaleX(-1);}
+}
+
+.izzi-logo{width: 98px;}
+
+.extensionhd-thumb{width: 119px;}
