@@ -1,7 +1,7 @@
 <template>
   <div class="ctrl-holder" :class="inputClasses">
     <label :for="id" class="placeholder">{{label}}</label>
-    <input type="text" v-model="modelInput" :name="id" :id="id" @focusin="inputFocus=true" @focusout="inputFocus=false" @input="actionInput" :required="isRequired"/>
+    <input :type="inputType" v-model="modelInput" :name="id" :id="id" @focusin="inputFocus=true" @focusout="inputFocus=false" @input="actionInput" :required="isRequired"/>
   </div>
 </template>
 
@@ -13,6 +13,7 @@ import { computed, ref } from 'vue';
     label: String,
     classes: String,
     require: String,
+    type: String,
   });
 
   const emit = defineEmits(['action']);
@@ -24,6 +25,10 @@ import { computed, ref } from 'vue';
     let cls = inputFocus.value ? 'focused' : '';
     cls = modelInput.value != '' ? 'filled' : cls;
     return props.classes +" "+ cls;
+  });
+
+  const inputType = computed(() => {
+    return props.type != 'pass' ? 'text' : 'password';
   });
 
   const isRequired = computed(() => {

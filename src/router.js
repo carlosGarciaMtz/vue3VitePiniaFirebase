@@ -5,7 +5,7 @@ import Login from './views/Login.vue';
 
 const requireAuth = async (to, from, next) => {
   const userStore = useUserStore();
-  if (!userStore.currentUser) {
+  if (userStore.currentUser()) {
     next();
   }else{
     next("/login");
